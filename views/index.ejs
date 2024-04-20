@@ -72,18 +72,32 @@
 </head>
 
 <body class="font-sans dark-mode">
-    <!-- Header Section -->
-    <header class="bg-gray-800 text-white py-10 animate__animated animate__slideInDown">
-        <div class="container mx-auto flex justify-between items-center px-4">
-            <h1 class="text-4xl font-semibold animate__animated animate__fadeIn">Image-core Generator</h1>
-            <button id="theme-toggle" class="focus:outline-none">Toggle Theme</button>
-            <nav class="animate__animated animate__fadeIn">
-                <a href="#" class="hover:text-gray-300 ml-4">Home</a>
-                <a href="#" class="hover:text-gray-300 ml-4">About</a>
-                <a href="#" class="hover:text-gray-300 ml-4">Contact</a>
-            </nav>
-        </div>
-    </header>
+<!-- Header Section -->
+<header class="bg-gray-800 text-white py-6 animate__animated animate__slideInDown">
+    <div class="container mx-auto flex justify-between items-center px-4">
+        <!-- Logo -->
+        <h1 class="text-2xl font-semibold animate__animated animate__fadeIn">Image-core Generator</h1>
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="focus:outline-none flex items-center text-gray-300 hover:text-gray-100 animate__animated animate__fadeIn">
+            <span class="mr-2">Toggle Theme</span>
+            <i class="fas fa-adjust"></i>
+        </button>
+    </div>
+<!-- Navigation -->
+<nav class="container mx-auto mt-4 animate__animated animate__fadeIn">
+    <ul class="flex justify-center space-x-8">
+        <li>
+            <a href="#" class="text-gray-300 transition duration-300 transform hover:scale-110 hover:bg-gray-700 hover:text-gray-100 px-4 py-2 rounded-lg animate__animated animate__fadeIn">Home</a>
+        </li>
+        <li>
+            <a href="https://sstudiosdev.is-a.dev/docs/image-core" target="_blank" class="text-gray-300 transition duration-300 transform hover:scale-110 hover:bg-gray-700 hover:text-gray-100 px-4 py-2 rounded-lg animate__animated animate__fadeIn">Docs</a>
+        </li>
+        <li>
+            <a href="#" class="text-gray-300 transition duration-300 transform hover:scale-110 hover:bg-gray-700 hover:text-gray-100 px-4 py-2 rounded-lg animate__animated animate__fadeIn">Random Image</a>
+        </li>
+    </ul>
+</nav>
+</header>
 
     <!-- Main Content Section -->
     <main class="container mx-auto px-4 mt-8 animate__animated animate__fadeIn">
@@ -94,24 +108,25 @@
                 Random  Image</a>
         </section>
 
-        <!-- Features Section -->
-        <section class="container mx-auto my-12 px-4 animate__animated animate__fadeIn">
-            <h2 class="text-3xl font-semibold text-center mb-8 animate__animated animate__fadeIn">Why Choose Us?</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                <div class="p-6 bg-gray-700 rounded-lg shadow-md animate__animated animate__fadeIn">
-                    <h3 class="text-xl font-semibold mb-4">Authentic Anime</h3>
-                    <p class="text-gray-300">Experience the magic of authentic anime imagery curated just for you.</p>
-                </div>
-                <div class="p-6 bg-gray-700 rounded-lg shadow-md animate__animated animate__fadeIn">
-                    <h3 class="text-xl font-semibold mb-4">Immerse Yourself</h3>
-                    <p class="text-gray-300">Dive into a world of creativity and imagination with our diverse collection of anime images.</p>
-                </div>
-                <div class="p-6 bg-gray-700 rounded-lg shadow-md animate__animated animate__fadeIn">
-                    <h3 class="text-xl font-semibold mb-4">Endless Inspiration</h3>
-                    <p class="text-gray-300">Find inspiration for your own artistic endeavors through our ever-expanding library of anime images.</p>
-                </div>
-            </div>
-        </section>
+<!-- Features Section -->
+<section class="container mx-auto my-12 px-4 animate__animated animate__fadeIn">
+    <h2 class="text-3xl font-semibold text-center mb-8 animate__animated animate__fadeIn">Why Choose Us?</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-gray-700 rounded-lg shadow-md animate__animated animate__fadeIn hover:shadow-lg transform hover:scale-105 transition duration-300">
+            <h3 class="text-xl font-semibold mb-4">Authentic Anime</h3>
+            <p class="text-gray-300">Experience the magic of authentic anime imagery curated just for you.</p>
+        </div>
+        <div class="p-6 bg-gray-700 rounded-lg shadow-md animate__animated animate__fadeIn hover:shadow-lg transform hover:scale-105 transition duration-300">
+            <h3 class="text-xl font-semibold mb-4">Immerse Yourself</h3>
+            <p class="text-gray-300">Dive into a world of creativity and imagination with our diverse collection of anime images.</p>
+        </div>
+        <div class="p-6 bg-gray-700 rounded-lg shadow-md animate__animated animate__fadeIn hover:shadow-lg transform hover:scale-105 transition duration-300">
+            <h3 class="text-xl font-semibold mb-4">Endless Inspiration</h3>
+            <p class="text-gray-300">Find inspiration for your own artistic endeavors through our ever-expanding library of anime images.</p>
+        </div>
+    </div>
+</section>
+
 
 <!-- Install NPM Package Section -->
 <section class="container mx-auto my-12 px-4 animate__animated animate__fadeIn">
@@ -136,16 +151,17 @@ const { downloadRandomAnimeImage, getRandomAnimeImageUrl } = require('imagen-cor
 <section class="container mx-auto my-12 px-4 animate__animated animate__fadeIn">
     <h2 class="text-3xl font-semibold text-center mb-8 animate__animated animate__fadeIn">Statistics</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-        <div class="p-6 bg-gray-700 rounded-lg shadow-md animate__animated animate__fadeIn">
+        <div class="p-6 bg-gray-700 rounded-lg shadow-md animate__animated animate__fadeIn hover:shadow-lg transform hover:scale-105 transition duration-300">
             <h3 class="text-xl font-semibold mb-4">Total Random Images</h3>
-            <p class="text-gray-300"><%= totalFiles %></p>
+            <p class="text-gray-300"><%= totalFiles%></p>
         </div>
-        <div class="p-6 bg-gray-700 rounded-lg shadow-md animate__animated animate__fadeIn">
+        <div class="p-6 bg-gray-700 rounded-lg shadow-md animate__animated animate__fadeIn hover:shadow-lg transform hover:scale-105 transition duration-300">
             <h3 class="text-xl font-semibold mb-4">Total Anime Images</h3>
-            <p class="text-gray-300"><%= totalFilesAnime %></p>
+            <p class="text-gray-300"><%= totalFilesAnime%></p>
         </div>
     </div>
 </section>
+
 
 <!-- Contact Section -->
 <section class="bg-gray-800 text-white py-12 animate__animated animate__fadeIn">
