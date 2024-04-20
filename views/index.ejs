@@ -7,8 +7,6 @@
     <title>Random Image Generator</title>
     <!-- Integrate Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Integrate Tailwind CSS animations -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss-animation/dist/animations.min.css" rel="stylesheet">
     <!-- Integrate Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <!-- Integrate animate.css for animations -->
@@ -28,6 +26,7 @@
 
         a {
             color: #a0aec0;
+            transition: color 0.3s ease;
         }
 
         a:hover {
@@ -53,6 +52,22 @@
         .light-mode #dark-mode-modal {
             background-color: rgba(255, 255, 255, 0.5);
         }
+
+        /* Personalizar animaciones para botones */
+        .btn {
+            animation-duration: 0.5s;
+        }
+        
+        /* Personalizar animaciones para contenedores */
+        .container {
+            animation-duration: 1s;
+        }
+
+        /* Animación de hover para botones */
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 
@@ -75,7 +90,7 @@
         <section class="text-center">
             <p class="text-lg mb-8 animate__animated animate__fadeIn">Discover a world of anime with our randomly generated anime images.</p>
             <a href="/random-image"
-                class="btn text-white font-semibold py-2 px-6 rounded-full inline-block shadow-lg hover:bg-gray-700 bg-gray-600 animate__animated animate__fadeIn">View
+                class="btn text-white font-semibold py-2 px-6 rounded-full inline-block shadow-lg bg-gray-600 animate__animated animate__fadeIn transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">View
                 Random  Image</a>
         </section>
 
@@ -104,7 +119,7 @@
                 <h2 class="text-3xl font-semibold text-center mb-8 animate__animated animate__fadeIn">Get in Touch</h2>
                 <p class="text-lg text-center mb-8 animate__animated animate__fadeIn">Have questions or want to share your favorite anime with us? We'd love to hear from you!</p>
                 <div class="flex justify-center animate__animated animate__fadeIn">
-                    <a href="#" class="btn-inverse text-white font-semibold py-2 px-6 rounded-full inline-block shadow-lg hover:bg-gray-700 bg-gray-600">Contact Us</a>
+                    <a href="#" class="btn-inverse text-white font-semibold py-2 px-6 rounded-full inline-block shadow-lg bg-gray-600 hover:bg-gray-700 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">Contact Us</a>
                 </div>
             </div>
         </section>
