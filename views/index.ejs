@@ -75,7 +75,7 @@
     <!-- Header Section -->
     <header class="bg-gray-800 text-white py-10 animate__animated animate__slideInDown">
         <div class="container mx-auto flex justify-between items-center px-4">
-            <h1 class="text-4xl font-semibold animate__animated animate__fadeIn">Random Image Generator</h1>
+            <h1 class="text-4xl font-semibold animate__animated animate__fadeIn">Image-core Generator</h1>
             <button id="theme-toggle" class="focus:outline-none">Toggle Theme</button>
             <nav class="animate__animated animate__fadeIn">
                 <a href="#" class="hover:text-gray-300 ml-4">Home</a>
@@ -88,7 +88,7 @@
     <!-- Main Content Section -->
     <main class="container mx-auto px-4 mt-8 animate__animated animate__fadeIn">
         <section class="text-center">
-            <p class="text-lg mb-8 animate__animated animate__fadeIn">Discover a world of anime with our randomly generated anime images.</p>
+            <p class="text-lg mb-8 animate__animated animate__fadeIn">Discover visual diversity with Image-Core</p>
             <a href="/random-image"
                 class="btn text-white font-semibold py-2 px-6 rounded-full inline-block shadow-lg bg-gray-600 animate__animated animate__fadeIn transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">View
                 Random  Image</a>
@@ -113,17 +113,51 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="bg-gray-800 text-white py-12 animate__animated animate__fadeIn">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-semibold text-center mb-8 animate__animated animate__fadeIn">Get in Touch</h2>
-                <p class="text-lg text-center mb-8 animate__animated animate__fadeIn">Have questions or want to share your favorite anime with us? We'd love to hear from you!</p>
-                <div class="flex justify-center animate__animated animate__fadeIn">
-                    <a href="#" class="btn-inverse text-white font-semibold py-2 px-6 rounded-full inline-block shadow-lg bg-gray-600 hover:bg-gray-700 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">Contact Us</a>
-                </div>
-            </div>
-        </section>
-    </main>
+<!-- Install NPM Package Section -->
+<section class="container mx-auto my-12 px-4 animate__animated animate__fadeIn">
+    <h2 class="text-3xl font-semibold text-center mb-8 animate__animated animate__fadeIn">Install NPM Package</h2>
+    <div class="p-6 bg-gray-700 rounded-lg shadow-md animate__animated animate__fadeIn">
+        <h3 class="text-xl font-semibold mb-4">Step 1: Install the Package</h3>
+        <p class="text-gray-300">Open your terminal and run the following command to install the package:</p>
+        <pre class="bg-gray-800 rounded-lg p-4 mt-4"><code class="language-shell">npm install imagen-core</code></pre>
+    </div>
+    <div class="p-6 bg-gray-700 rounded-lg shadow-md animate__animated animate__fadeIn mt-8">
+        <h3 class="text-xl font-semibold mb-4">Step 2: Import the Package</h3>
+        <p class="text-gray-300">In your JavaScript file, import the package to start using it:</p>
+        <pre class="bg-gray-800 rounded-lg p-4 mt-4"><code class="language-javascript">// Random image module
+const { downloadRandomImage, getImageUrlFull } = require('imagen-core');
+
+// Anime images module
+const { downloadRandomAnimeImage, getRandomAnimeImageUrl } = require('imagen-core');</code></pre>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="container mx-auto my-12 px-4 animate__animated animate__fadeIn">
+    <h2 class="text-3xl font-semibold text-center mb-8 animate__animated animate__fadeIn">Statistics</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div class="p-6 bg-gray-700 rounded-lg shadow-md animate__animated animate__fadeIn">
+            <h3 class="text-xl font-semibold mb-4">Total Random Images</h3>
+            <p class="text-gray-300"><%= totalFiles %></p>
+        </div>
+        <div class="p-6 bg-gray-700 rounded-lg shadow-md animate__animated animate__fadeIn">
+            <h3 class="text-xl font-semibold mb-4">Total Anime Images</h3>
+            <p class="text-gray-300"><%= totalFilesAnime %></p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="bg-gray-800 text-white py-12 animate__animated animate__fadeIn">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-semibold text-center mb-8 animate__animated animate__fadeIn">Get in Touch</h2>
+        <p class="text-lg text-center mb-8 animate__animated animate__fadeIn">Would you like to share your favorite image with us? We're excited to see it! Feel free to tell us why it's so special to you—we're here to listen and share in that moment with you!</p>
+        <div class="flex justify-center animate__animated animate__fadeIn">
+            <a href="#" class="btn-inverse text-white font-semibold py-2 px-6 rounded-full inline-block shadow-lg bg-gray-600 hover:bg-gray-700 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">Contact Us</a>
+        </div>
+    </div>
+</section>
+
 
     <!-- Dark Mode Modal -->
     <div id="dark-mode-modal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center hidden">
