@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Generator</title>
+    <!-- Integrate Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Integrate Tailwind CSS animations -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss-animation/dist/animations.min.css" rel="stylesheet">
+    <!-- Integrate Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Integrate animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* Additional custom styles can be added here */
+        /* No additional styles needed, as Tailwind CSS is used */
+        body.dark-mode {
+            background-color: #1a202c;
+            color: #cbd5e0;
+        }
+
+        body.light-mode {
+            background-color: #f7fafc;
+            color: #1a202c;
+        }
+
+        a {
+            color: #a0aec0;
+        }
+
+        a:hover {
+            color: #cbd5e0;
+        }
+
+        #theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 9999;
+        }
+
+        #dark-mode-modal {
+            z-index: 9998;
+        }
+
+        /* Style for the modal background color */
+        .dark-mode #dark-mode-modal {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .light-mode #dark-mode-modal {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body class="font-sans dark-mode">
+    <!-- Header Section -->
+    <header class="bg-gray-800 text-white py-10 animate__animated animate__slideInDown">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-4xl font-semibold animate__animated animate__fadeIn">Random Image Generator</h1>
+            <button id="theme-toggle" class="focus:outline-none">Toggle Theme</button>
+            <nav class="animate__animated animate__fadeIn">
+                <a href="#" class="hover:text-gray-300 ml-4">Home</a>
+                <a href="#" class="hover:text-gray-300 ml-4">About</a>
+                <a href="#" class="hover:text-gray-300 ml-4">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container mx-auto px-4 mt-8 animate__animated animate__fadeIn">
+        <section class="text-center">
+            <p class="text-lg mb-8 animate__animated animate__fadeIn">Discover a world of anime with our randomly generated anime images.</p>
+            <a href="/random-image"
+                class="btn text-white font-semibold py-2 px-6 rounded-full inline-block shadow-lg hover:bg-gray-700 bg-gray-600 animate__animated animate__fadeIn">View
+                Random  Image</a>
+        </section>
+
+        <!-- Features Section -->
+        <section class="container mx-auto my-12 px-4 animate__animated animate__fadeIn">
+            <h2 class="text-3xl font-semibold text-center mb-8 animate__animated animate__fadeIn">Why Choose Us?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-gray-700 rounded-lg shadow-md animate__animated animate__fadeIn">
+                    <h3 class="text-xl font-semibold mb-4">Authentic Anime</h3>
+                    <p class="text-gray-300">Experience the magic of authentic anime imagery curated just for you.</p>
+                </div>
+                <div class="p-6 bg-gray-700 rounded-lg shadow-md animate__animated animate__fadeIn">
+                    <h3 class="text-xl font-semibold mb-4">Immerse Yourself</h3>
+                    <p class="text-gray-300">Dive into a world of creativity and imagination with our diverse collection of anime images.</p>
+                </div>
+                <div class="p-6 bg-gray-700 rounded-lg shadow-md animate__animated animate__fadeIn">
+                    <h3 class="text-xl font-semibold mb-4">Endless Inspiration</h3>
+                    <p class="text-gray-300">Find inspiration for your own artistic endeavors through our ever-expanding library of anime images.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="bg-gray-800 text-white py-12 animate__animated animate__fadeIn">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-semibold text-center mb-8 animate__animated animate__fadeIn">Get in Touch</h2>
+                <p class="text-lg text-center mb-8 animate__animated animate__fadeIn">Have questions or want to share your favorite anime with us? We'd love to hear from you!</p>
+                <div class="flex justify-center animate__animated animate__fadeIn">
+                    <a href="#" class="btn-inverse text-white font-semibold py-2 px-6 rounded-full inline-block shadow-lg hover:bg-gray-700 bg-gray-600">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Dark Mode Modal -->
+    <div id="dark-mode-modal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center hidden">
+        <div class="bg-white rounded-lg p-8 max-w-sm mx-auto relative">
+            <button id="close-modal-btn" class="absolute top-0 right-0 mr-4 mt-4 text-gray-600 hover:text-gray-800 focus:outline-none">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="text-xl font-semibold mb-4">Select Theme</h2>
+            <div class="flex justify-between mb-4">
+                <button id="light-mode-btn" class="btn text-black font-semibold py-2 px-6 rounded-full inline-block shadow-lg hover:bg-gray-200 bg-gray-100">Light</button>
+                <button id="dark-mode-btn" class="btn text-white font-semibold py-2 px-6 rounded-full inline-block shadow-lg hover:bg-gray-700 bg-gray-600">Dark</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const darkModeModal = document.getElementById('dark-mode-modal');
+        const lightModeBtn = document.getElementById('light-mode-btn');
+        const darkModeBtn = document.getElementById('dark-mode-btn');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+
+        themeToggle.addEventListener('click', () => {
+            darkModeModal.classList.toggle('hidden');
+        });
+
+        lightModeBtn.addEventListener('click', () => {
+            document.body.classList.remove('dark-mode');
+            document.body.classList.add('light-mode');
+            darkModeModal.classList.add('hidden');
+        });
+
+        darkModeBtn.addEventListener('click', () => {
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+            darkModeModal.classList.add('hidden');
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            darkModeModal.classList.add('hidden');
+        });
+    </script>
+</body>
+
+</html>
